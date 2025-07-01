@@ -50,5 +50,10 @@ if __name__ == "__main__":
         db.create_all()
     app.run(debug=True)
 
-<!-- Perubahan kecil untuk tugas RPL -->
-<h2>Silakan Login ke Aplikasi</h2>
+from flask import Flask, render_template, request  # pastikan import ini ada
+
+app = Flask(__name__)
+
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    return render_template('login.html')
